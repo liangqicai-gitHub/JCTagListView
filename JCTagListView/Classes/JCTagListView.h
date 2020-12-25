@@ -1,3 +1,4 @@
+
 //
 //  JCTagListView.h
 //  JCTagListView
@@ -40,6 +41,7 @@ IB_DESIGNABLE
 
 @property (nonatomic, assign, readonly) CGFloat contentHeight; // Used to calculate the height
 
+@property (nonatomic, assign) BOOL isJustCallBock;  // default: NO
 - (void)didSelectItem:(JCTagListViewBlock)block;
 
 - (void)reloadData;

@@ -120,6 +120,14 @@ static NSString * const reuseIdentifier = @"tagListViewItemId";
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (self.isJustCallBock) {
+        if (self.selectedBlock) {
+            self.selectedBlock(indexPath.item);
+        }
+        return;
+    }
+    
     if (self.supportSelected) {
         if (self.supportMultipleSelected) {
             if ([self.selectedTags containsObject:self.tags[indexPath.item]]) {
@@ -233,3 +241,4 @@ static NSString * const reuseIdentifier = @"tagListViewItemId";
 }
 
 @end
+
